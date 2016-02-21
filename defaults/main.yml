@@ -1,0 +1,9 @@
+---
+
+pma_name: phpMyAdmin
+pma_version: 3.5.8.2
+pma_language: english
+pma_download_url: "https://files.phpmyadmin.net/phpMyAdmin/{{pma_version}}/{{pma_name}}-{{pma_version}}-{{pma_language}}.tar.gz"
+pma_tmp_file: /tmp/{{pma_name}}-{{pma_version}}-{{pma_language}}.tar.gz
+
+pma_link_dest: /var/www/html/mysql

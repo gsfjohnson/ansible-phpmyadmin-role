@@ -1,0 +1,12 @@
+---
+
+- name: download {{pma_download_url}}
+  get_url: url={{pma_download_url}} dest={{pma_tmp_file}} validate_certs=False
+
+- name: expand archive
+  unarchive: src={{pma_tmp_file}} dest=/var/www copy=no creates=/var/www/{{pma_name}}-{{pma_version}}-{{pma_language}}
+  register: st
+
+- name: symlink
+  file: src=/var/www/{{pma_name}}-{{pma_version}}-{{pma_language}} dest={{pma_link_dest}} state=link
+
